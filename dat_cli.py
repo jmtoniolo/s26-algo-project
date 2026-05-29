@@ -26,7 +26,7 @@ def format_runtime(seconds: float) -> str:
 
 def read_dat_rows(path: str) -> List[List[str]]:
     with open(path, "r", encoding="utf-8") as file:
-        return [line.strip().split() for line in file if line.strip()]
+        return [stripped.split() for line in file if (stripped := line.strip())]
 
 
 def format_table(rows: List[List[str]]) -> str:
